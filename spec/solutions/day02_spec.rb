@@ -29,4 +29,12 @@ RSpec.describe Day02 do
       is_expected.to eq 15
     end
   end
+
+  describe ".get_depth_and_pos_with_aim" do
+    subject { described_class.get_depth_and_pos_with_aim(instructions) }
+
+    it "calculates depth and pos based on the changing aim and amount of forward movement" do
+      is_expected.to eq [60, 15]
+    end
+  end
 end

@@ -4,12 +4,15 @@ class Day02
   INPUT = "../../inputs/day02.txt"
 
   def self.input
-    @input ||= File.open(INPUT).readlines.map(&:strip).map(&:split)
+    @input ||= File.open(INPUT).readlines
+      .map(&:strip)
+      .map(&:split)
+      .map { |command, amount| [command, amount.to_i] }
   end
 
   def self.find_depth(instructions)
-    instructions.select { |command, _| command == "down" }.map(&:last).map(&:to_i).sum -
-      instructions.select { |command, _| command == "up" }.map(&:last).map(&:to_i).sum
+    instructions.select { |command, _| command == "down" }.map(&:last).sum -
+      instructions.select { |command, _| command == "up" }.map(&:last).sum
   end
 
   def self.find_horizontal_pos(instructions)
@@ -20,6 +23,25 @@ class Day02
     find_depth(input) * find_horizontal_pos(input)
   end
 
+  def self.get_depth_and_pos_with_aim(instructions)
+    depth = pos = aim = 0
+
+    instructions.each do |command, amount|
+      case command
+      when "down"
+        aim += amount
+      when "up"
+        aim -= amount
+      when "forward"
+        pos += amount
+        depth += aim * amount
+      end
+    end
+
+    [depth, pos]
+  end
+
   def self.part_two
+    get_depth_and_pos_with_aim(input).reduce(:*)
   end
 end
