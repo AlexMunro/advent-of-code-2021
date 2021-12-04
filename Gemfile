@@ -4,7 +4,9 @@ source "https://rubygems.org"
 
 git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 
-gem "advent_of_code_cli", github: "AlexMunro/advent_of_code_cli"
+gem "advent_of_code_cli", "0.2.0", github: "AlexMunro/advent_of_code_cli"
 gem "byebug"
 gem "rbs"
 gem "rspec"
+gem "rubocop"
+gem "typeprof", "0.20.3"

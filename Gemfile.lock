@@ -1,15 +1,23 @@
 GIT
   remote: https://github.com/AlexMunro/advent_of_code_cli
-  revision: 63ce3e2c0aa2f8adb2ae67316422999970324202
+  revision: 4158a415eda67bbd007f45dbe16f751c74dabd29
   specs:
-    advent_of_code_cli (0.1.0)
+    advent_of_code_cli (0.2.0)
+      thor
 
 GEM
   remote: https://rubygems.org/
   specs:
+    ast (2.4.2)
     byebug (11.1.3)
     diff-lcs (1.4.4)
-    rbs (1.4.0)
+    parallel (1.21.0)
+    parser (3.0.3.1)
+      ast (~> 2.4.1)
+    rainbow (3.0.0)
+    rbs (1.8.0)
+    regexp_parser (2.1.1)
+    rexml (3.2.5)
     rspec (3.10.0)
       rspec-core (~> 3.10.0)
       rspec-expectations (~> 3.10.0)
@@ -23,15 +31,33 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.10.0)
     rspec-support (3.10.3)
+    rubocop (1.23.0)
+      parallel (~> 1.10)
+      parser (>= 3.0.0.0)
+      rainbow (>= 2.2.2, < 4.0)
+      regexp_parser (>= 1.8, < 3.0)
+      rexml
+      rubocop-ast (>= 1.12.0, < 2.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (>= 1.4.0, < 3.0)
+    rubocop-ast (1.14.0)
+      parser (>= 3.0.1.1)
+    ruby-progressbar (1.11.0)
+    thor (1.1.0)
+    typeprof (0.20.3)
+      rbs (>= 1.6.2)
+    unicode-display_width (2.1.0)
 
 PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  advent_of_code_cli!
+  advent_of_code_cli (= 0.2.0)!
   byebug
   rbs
   rspec
+  rubocop
+  typeprof (= 0.20.3)
 
 BUNDLED WITH
-   2.2.32
+   2.3.0.dev
