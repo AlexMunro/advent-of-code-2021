@@ -12,6 +12,10 @@ Style/TrailingCommaInArrayLiteral:
 Gemspec/RequiredRubyVersion:
   Enabled: false
 
+# Ruby 3.1 hash shorthand
+Layout/SpaceAfterColon:
+  Enabled: false
+
 # Default cop settings
 AllCops:
   NewCops: enable
