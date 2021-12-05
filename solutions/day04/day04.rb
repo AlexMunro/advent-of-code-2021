@@ -3,7 +3,7 @@
 class Day04
   require_relative "./bingo_board"
 
-  INPUT = "../../inputs/day04.txt"
+  INPUT = File.expand_path("../../inputs/day04.txt", File.dirname(__FILE__))
 
   def self.input
     # Would have been able to use Array.split in Rails :(
@@ -20,6 +20,14 @@ class Day04
     end
 
     { numbers:, boards: }
+  end
+
+  def self.part_one
+    new(**input).winning_board_score
+  end
+
+  def self.part_two
+    new(**input).losing_board_score
   end
 
   def initialize(numbers:, boards:)
@@ -44,13 +52,5 @@ class Day04
 
       @boards.reject!(&:bingo?)
     end
-  end
-
-  def self.part_one
-    new(**input).winning_board_score
-  end
-
-  def self.part_two
-    new(**input).losing_board_score
   end
 end

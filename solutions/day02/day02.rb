@@ -1,13 +1,21 @@
 # frozen_string_literal: true
 
 class Day02
-  INPUT = "../../inputs/day02.txt"
+  INPUT = File.expand_path("../../inputs/day02.txt", File.dirname(__FILE__))
 
   def self.input
     @input ||= File.open(INPUT).readlines
       .map(&:strip)
       .map(&:split)
       .map { |command, amount| [command, amount.to_i] }
+  end
+
+  def self.part_one
+    find_depth(input) * find_horizontal_pos(input)
+  end
+
+  def self.part_two
+    get_depth_and_pos_with_aim(input).reduce(:*)
   end
 
   def self.find_depth(instructions)
@@ -17,10 +25,6 @@ class Day02
 
   def self.find_horizontal_pos(instructions)
     instructions.select { |command, _| command == "forward" }.map(&:last).map(&:to_i).sum
-  end
-
-  def self.part_one
-    find_depth(input) * find_horizontal_pos(input)
   end
 
   def self.get_depth_and_pos_with_aim(instructions)
@@ -39,9 +43,5 @@ class Day02
     end
 
     [depth, pos]
-  end
-
-  def self.part_two
-    get_depth_and_pos_with_aim(input).reduce(:*)
   end
 end

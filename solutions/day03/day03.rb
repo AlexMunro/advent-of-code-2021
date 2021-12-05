@@ -1,10 +1,20 @@
 # frozen_string_literal: true
 
 class Day03
-  INPUT = "../../inputs/day03.txt"
+  INPUT = File.expand_path("../../inputs/day03.txt", File.dirname(__FILE__))
 
   def self.input
     @input ||= File.open(INPUT).readlines.map(&:strip)
+  end
+
+  def self.part_one
+    solution = new(input)
+    solution.gamma * solution.epsilon
+  end
+
+  def self.part_two
+    solution = new(input)
+    solution.oxygen_generation * solution.co2_rating
   end
 
   def initialize(input)
@@ -46,15 +56,5 @@ class Day03
 
       remaining_readings.filter { |r| r[i] == least_common_value }
     end.first.to_i(2)
-  end
-
-  def self.part_one
-    solution = new(input)
-    solution.gamma * solution.epsilon
-  end
-
-  def self.part_two
-    solution = new(input)
-    solution.oxygen_generation * solution.co2_rating
   end
 end
