@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/AlexMunro/advent_of_code_cli
-  revision: aa94bf0e7297698e7ccc7f227c5ec85d9c3f8e12
+  revision: 9721fd27c058569630d4a3fba0f948cdff570f27
   specs:
-    advent_of_code_cli (0.3.0)
+    advent_of_code_cli (0.3.2)
       httparty
       nokogiri
       thor
@@ -30,7 +30,7 @@ GEM
     racc (1.6.0)
     rainbow (3.0.0)
     rbs (1.8.0)
-    regexp_parser (2.1.1)
+    regexp_parser (2.2.0)
     rexml (3.2.5)
     rspec (3.10.0)
       rspec-core (~> 3.10.0)
@@ -66,7 +66,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  advent_of_code_cli (= 0.3.0)!
+  advent_of_code_cli (= 0.3.2)!
   byebug
   rbs
   rspec
@@ -74,4 +74,4 @@ DEPENDENCIES
   typeprof (= 0.20.3)
 
 BUNDLED WITH
-   2.3.0.dev
+   2.2.32
