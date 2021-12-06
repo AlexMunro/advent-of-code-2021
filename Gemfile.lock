@@ -58,8 +58,6 @@ GEM
       parser (>= 3.0.1.1)
     ruby-progressbar (1.11.0)
     thor (1.1.0)
-    typeprof (0.20.3)
-      rbs (>= 1.6.2)
     unicode-display_width (2.1.0)
 
 PLATFORMS
@@ -71,7 +69,6 @@ DEPENDENCIES
   rbs
   rspec
   rubocop
-  typeprof (= 0.20.3)
 
 BUNDLED WITH
    2.2.32
