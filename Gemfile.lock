@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/AlexMunro/advent_of_code_cli
-  revision: 9721fd27c058569630d4a3fba0f948cdff570f27
+  revision: e67bb0e1c800fad248171399b6d64586ac5acdc9
   specs:
-    advent_of_code_cli (0.3.2)
+    advent_of_code_cli (0.3.3)
       httparty
       nokogiri
       thor
@@ -64,7 +64,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  advent_of_code_cli (= 0.3.2)!
+  advent_of_code_cli (= 0.3.3)!
   byebug
   rbs
   rspec
