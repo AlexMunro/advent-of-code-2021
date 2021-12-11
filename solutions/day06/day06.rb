@@ -1,11 +1,9 @@
 # frozen_string_literal: true
 
-class Day06
-  INPUT = File.expand_path("../../inputs/day06.txt", File.dirname(__FILE__))
+require_relative "../../utils/input/int_list"
 
-  def self.input
-    File.open(INPUT).readlines[0].strip.split(",").map(&:to_i)
-  end
+class Day06
+  extend Input::IntList
 
   def self.part_one
     new.children_after_days(input, 80)

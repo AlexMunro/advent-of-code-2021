@@ -1,13 +1,10 @@
 # frozen_string_literal: true
 
+require_relative "../../utils/input/lines"
+require_relative "./display_entry"
+
 class Day08
-  require_relative "./display_entry"
-
-  INPUT = File.expand_path("../../inputs/day08.txt", File.dirname(__FILE__))
-
-  def self.input
-    File.open(INPUT).readlines.map(&:strip)
-  end
+  extend Input::Lines
 
   def self.part_one
     new(input).sum_easy_output

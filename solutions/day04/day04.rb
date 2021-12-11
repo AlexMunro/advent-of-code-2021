@@ -1,9 +1,10 @@
 # frozen_string_literal: true
 
-class Day04
-  require_relative "./bingo_board"
+require_relative "../../utils/input/file"
+require_relative "./bingo_board"
 
-  INPUT = File.expand_path("../../inputs/day04.txt", File.dirname(__FILE__))
+class Day04
+  extend Input::File
 
   def self.input
     # Would have been able to use Array.split in Rails :(

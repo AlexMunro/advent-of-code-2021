@@ -1,11 +1,9 @@
 # frozen_string_literal: true
 
-class Day03
-  INPUT = File.expand_path("../../inputs/day03.txt", File.dirname(__FILE__))
+require_relative "../../utils/input/lines"
 
-  def self.input
-    @input ||= File.open(INPUT).readlines.map(&:strip)
-  end
+class Day03
+  extend Input::Lines
 
   def self.part_one
     solution = new(input)

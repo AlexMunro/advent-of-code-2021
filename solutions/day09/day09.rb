@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
+require_relative "../../utils/input/file"
+
 class Day09
-  INPUT = File.expand_path("../../inputs/day09.txt", File.dirname(__FILE__))
+  extend Input::File
 
   def self.input
     File.open(INPUT).readlines.map do |line|

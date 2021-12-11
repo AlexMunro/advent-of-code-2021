@@ -1,11 +1,9 @@
 # frozen_string_literal: true
 
-class Day07
-  INPUT = File.expand_path("../../inputs/day07.txt", File.dirname(__FILE__))
+require_relative "../../utils/input/int_list"
 
-  def self.input
-    File.open(INPUT).readlines[0].strip.split(",").map(&:to_i)
-  end
+class Day07
+  extend Input::IntList
 
   def self.part_one
     new(input).least_fuel_required(:linear_fuel_required_for_position)

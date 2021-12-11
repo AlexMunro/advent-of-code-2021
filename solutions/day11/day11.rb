@@ -1,15 +1,10 @@
 # frozen_string_literal: true
 
 require "set"
+require_relative "../../utils/input/int_grid"
 
 class Day11
-  INPUT = File.expand_path("../../inputs/day11.txt", File.dirname(__FILE__))
-
-  def self.input
-    File.open(INPUT).readlines.map do |line|
-      line.strip.chars.map(&:to_i)
-    end
-  end
+  extend Input::IntGrid
 
   def self.part_one
     new(input).total_flashes(100)

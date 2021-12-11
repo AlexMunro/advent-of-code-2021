@@ -1,11 +1,9 @@
 # frozen_string_literal: true
 
-class Day01
-  INPUT = File.expand_path("../../inputs/day01.txt", File.dirname(__FILE__))
+require_relative "../../utils/input/int_list"
 
-  def self.input
-    @input ||= File.open(INPUT).readlines.map(&:strip).map(&:to_i)
-  end
+class Day01
+  extend Input::IntList
 
   def self.part_one
     number_of_improvements(input)

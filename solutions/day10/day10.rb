@@ -1,16 +1,13 @@
 # frozen_string_literal: true
 
 require_relative "./navigation_line"
+require_relative "../../utils/input/lines"
 
 class Day10
-  INPUT = File.expand_path("../../inputs/day10.txt", File.dirname(__FILE__))
+  extend Input::Lines
 
   def initialize(lines)
     @lines = lines.map { |line| NavigationLine.new(line) }
-  end
-
-  def self.input
-    File.open(INPUT).readlines.map(&:strip)
   end
 
   def self.part_one

@@ -1,10 +1,12 @@
 # frozen_string_literal: true
 
+require_relative "../../utils/input/file"
+
 class Day02
-  INPUT = File.expand_path("../../inputs/day02.txt", File.dirname(__FILE__))
+  extend Input::File
 
   def self.input
-    @input ||= File.open(INPUT).readlines
+    @input ||= ::File.open(INPUT).readlines
       .map(&:strip)
       .map(&:split)
       .map { |command, amount| [command, amount.to_i] }

@@ -1,13 +1,10 @@
 # frozen_string_literal: true
 
+require_relative "../../utils/input/lines"
 require_relative "./line"
 
 class Day05
-  INPUT = File.expand_path("../../inputs/day05.txt", File.dirname(__FILE__))
-
-  def self.input
-    File.readlines(INPUT)
-  end
+  extend Input::Lines
 
   def self.part_one
     new(input).overlapping_points_for_horizontal_and_vertical_lines.count
