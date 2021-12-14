@@ -42,9 +42,7 @@ class Day11
 
   def ready_to_flash
     @octopodes.each_with_index.map do |row, y|
-      row.each_with_index.map do |octopus, x|
-        [x, y] if octopus >= 10
-      end.compact
+      row.each_with_index.filter_map { |octopus, x| [x, y] if octopus >= 10 }
     end.reject(&:empty?).flatten(1)
   end
 
