@@ -25,7 +25,7 @@ RSpec.describe Day14 do
         "CC -> N",
         "CN -> C",
       ]
-   )
+    )
   end
 
   describe "#difference_between_most_and_least_common_element" do
@@ -36,10 +36,11 @@ RSpec.describe Day14 do
 
   describe "#apply_rules" do
     it "further expands the polymer with each pass of rule applications" do
-      expect(day14.apply_rules).to eq "NCNBCHB".chars
-      expect(day14.apply_rules).to eq "NBCCNBBBCBHCB".chars
-      expect(day14.apply_rules).to eq "NBBBCNCCNBBNBNBBCHBHHBCHB".chars
-      expect(day14.apply_rules).to eq "NBBNBNBBCCNBCNCCNBBNBBNBBBNBBNBBCBHCBHHNHCBBCBHCB".chars
+      expect(day14.apply_rules).to eq "NCNBCHB".chars.each_cons(2).map(&:join).tally
+      expect(day14.apply_rules).to eq "NBCCNBBBCBHCB".chars.each_cons(2).map(&:join).tally
+      expect(day14.apply_rules).to eq "NBBBCNCCNBBNBNBBCHBHHBCHB".chars.each_cons(2).map(&:join).tally
+      expect(day14.apply_rules).to eq "NBBNBNBBCCNBCNCCNBBNBBNBBBNBBNBBCBHCBHHNHCBBCBHCB"
+        .chars.each_cons(2).map(&:join).tally
     end
   end
 end

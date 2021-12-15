@@ -15,7 +15,7 @@ class Day14
 
   def self.from_strings(lines)
     new(
-      polymer: lines[0].chars,
+      polymer: lines[0],
       rules: lines[2..]
         .map { |line| line.split(" -> ") }
         .to_h
@@ -23,26 +23,52 @@ class Day14
   end
 
   def initialize(polymer:, rules:)
-    @polymer = polymer
+    @polymer = polymer.chars.each_cons(2).map(&:join).tally
     @rules = rules
     @longest_rule = 2
   end
 
   def difference_between_most_and_least_common_element(rule_applications)
     rule_applications.times { apply_rules }
-    element_counts = @polymer.tally.values
-    element_counts.max - element_counts.min
+    counts = element_counts.values
+    ((counts.max - counts.min) / 2.0).ceil # Remember that (almost) every entry is counted twice
   end
 
   def apply_rules
-    insertions = @polymer.each_cons(2).each_with_index.filter_map do |pair, index|
-      [@rules[pair.join], index] if @rules[pair.join]
+    per_rule_tallies = @polymer.map do |pair, amount|
+      inserted = @rules[pair]
+      {
+        "#{pair[0]}#{inserted}" => amount,
+        "#{inserted}#{pair[1]}" => amount
+      }
     end
 
-    insertions.reverse.each do |substitution, index|
-      @polymer.insert(index + 1, substitution)
-    end
+    @polymer = merge_tallies(per_rule_tallies)
+  end
 
-    @polymer
+  private
+
+  def element_counts
+    @polymer.each_with_object({}) do |pair_entry, counts|
+      first_char = pair_entry.first[0]
+      second_char = pair_entry.first[1]
+      amount = pair_entry.last
+
+      counts[first_char] ||= 0
+      counts[second_char] ||= 0
+      counts[first_char] += amount
+      counts[second_char] += amount
+
+      counts
+    end
+  end
+
+  def merge_tallies(tallies)
+    tallies.each_with_object({}) do |next_tally, combined_tally|
+      next_tally.each do |pair, amount|
+        combined_tally[pair] ||= 0
+        combined_tally[pair] += amount
+      end
+    end
   end
 end
