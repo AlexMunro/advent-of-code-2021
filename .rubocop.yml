@@ -11,6 +11,8 @@ Style/TrailingCommaInArrayLiteral:
   Enabled: false
 Gemspec/RequiredRubyVersion:
   Enabled: false
+Layout/FirstArrayElementIndentation:
+  Enabled: false
 
 # Ruby 3.1 hash shorthand
 Layout/SpaceAfterColon:
