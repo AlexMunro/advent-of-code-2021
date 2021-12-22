@@ -10,4 +10,13 @@ RSpec.describe Day21 do
 
     it { is_expected.to eq 739_785 }
   end
+<<<<<<< HEAD
+=======
+
+  xdescribe "#quantum_game" do
+    subject { day21.quantum_game }
+
+    it { is_expected.to eq 444_356_092_776_315 }
+  end
+>>>>>>> Day 21 part one
 end
