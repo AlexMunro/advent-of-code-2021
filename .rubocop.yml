@@ -1,3 +1,5 @@
+require: rubocop-rspec
+
 Style/StringLiterals:
   StyleGuide: 'https://github.com/bbatsov/ruby-style-guide#consistent-string-literals'
   EnforcedStyle: "double_quotes"
@@ -17,6 +19,11 @@ Layout/FirstArrayElementIndentation:
 # Ruby 3.1 hash shorthand
 Layout/SpaceAfterColon:
   Enabled: false
+
+Metrics/BlockLength:
+  Enabled: true
+  Exclude:
+    - spec/**/*
 
 # Default cop settings
 AllCops:
