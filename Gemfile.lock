@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/AlexMunro/advent_of_code_cli
-  revision: a0ab454831b34c4039ae3c752924481d31f74314
+  revision: 20273094d61fa58d44bfa40d91c17cd55cd06a53
   specs:
-    advent_of_code_cli (0.3.3)
+    advent_of_code_cli (0.3.4)
       httparty
       nokogiri
       thor
@@ -13,70 +13,71 @@ GEM
     ast (2.4.2)
     backport (1.2.0)
     benchmark (0.2.0)
-    debug (1.4.0)
+    debug (1.5.0)
       irb (>= 1.3.6)
       reline (>= 0.2.7)
-    diff-lcs (1.4.4)
+    diff-lcs (1.5.0)
     e2mmap (0.1.0)
     httparty (0.20.0)
       mime-types (~> 3.0)
       multi_xml (>= 0.5.2)
-    io-console (0.5.10)
+    io-console (0.5.11)
     irb (1.4.1)
       reline (>= 0.3.0)
     jaro_winkler (1.5.4)
-    kramdown (2.3.1)
+    kramdown (2.4.0)
       rexml
     kramdown-parser-gfm (1.1.0)
       kramdown (~> 2.0)
+    matrix (0.4.2)
     mime-types (3.4.1)
       mime-types-data (~> 3.2015)
-    mime-types-data (3.2021.1115)
-    mini_portile2 (2.6.1)
+    mime-types-data (3.2022.0105)
     multi_xml (0.6.0)
-    nokogiri (1.12.5)
-      mini_portile2 (~> 2.6.1)
+    nokogiri (1.13.4-x86_64-darwin)
       racc (~> 1.4)
-    parallel (1.21.0)
-    parser (3.0.3.1)
+    nokogiri (1.13.4-x86_64-linux)
+      racc (~> 1.4)
+    parallel (1.22.1)
+    parser (3.1.2.0)
       ast (~> 2.4.1)
     racc (1.6.0)
-    rainbow (3.0.0)
-    rbtree (0.4.4)
-    regexp_parser (2.2.0)
-    reline (0.3.0)
+    rainbow (3.1.1)
+    rbtree (0.4.5)
+    regexp_parser (2.3.1)
+    reline (0.3.1)
       io-console (~> 0.5)
     reverse_markdown (2.1.1)
       nokogiri
     rexml (3.2.5)
-    rspec (3.10.0)
-      rspec-core (~> 3.10.0)
-      rspec-expectations (~> 3.10.0)
-      rspec-mocks (~> 3.10.0)
-    rspec-core (3.10.1)
-      rspec-support (~> 3.10.0)
-    rspec-expectations (3.10.1)
+    rspec (3.11.0)
+      rspec-core (~> 3.11.0)
+      rspec-expectations (~> 3.11.0)
+      rspec-mocks (~> 3.11.0)
+    rspec-core (3.11.0)
+      rspec-support (~> 3.11.0)
+    rspec-expectations (3.11.0)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.10.0)
-    rspec-mocks (3.10.2)
+      rspec-support (~> 3.11.0)
+    rspec-mocks (3.11.1)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.10.0)
-    rspec-support (3.10.3)
-    rubocop (1.23.0)
+      rspec-support (~> 3.11.0)
+    rspec-support (3.11.0)
+    rubocop (1.28.2)
       parallel (~> 1.10)
-      parser (>= 3.0.0.0)
+      parser (>= 3.1.0.0)
       rainbow (>= 2.2.2, < 4.0)
       regexp_parser (>= 1.8, < 3.0)
       rexml
-      rubocop-ast (>= 1.12.0, < 2.0)
+      rubocop-ast (>= 1.17.0, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 3.0)
-    rubocop-ast (1.14.0)
-      parser (>= 3.0.1.1)
-    rubocop-rspec (2.6.0)
+    rubocop-ast (1.17.0)
+      parser (>= 3.1.1.0)
+    rubocop-rspec (2.10.0)
       rubocop (~> 1.19)
     ruby-progressbar (1.11.0)
-    solargraph (0.44.2)
+    solargraph (0.44.3)
       backport (~> 1.2)
       benchmark
       bundler (>= 1.17.2)
@@ -91,7 +92,7 @@ GEM
       thor (~> 1.0)
       tilt (~> 2.0)
       yard (~> 0.9, >= 0.9.24)
-    thor (1.1.0)
+    thor (1.2.1)
     tilt (2.0.10)
     unicode-display_width (2.1.0)
     webrick (1.7.0)
@@ -99,11 +100,13 @@ GEM
       webrick (~> 1.7.0)
 
 PLATFORMS
+  x86_64-darwin-20
   x86_64-linux
 
 DEPENDENCIES
-  advent_of_code_cli (= 0.3.3)!
+  advent_of_code_cli (= 0.3.4)!
   debug
+  matrix
   rbtree
   rspec
   rubocop
@@ -111,4 +114,4 @@ DEPENDENCIES
   solargraph
 
 BUNDLED WITH
-   2.2.32
+   2.3.12
