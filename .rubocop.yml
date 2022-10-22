@@ -25,6 +25,9 @@ Metrics/BlockLength:
   Exclude:
     - spec/**/*
 
+Naming/MethodParameterName:
+  Enabled: false
+
 # Default cop settings
 AllCops:
   NewCops: enable
