@@ -14,6 +14,7 @@ class Day17
   end
 
   def self.part_two
+    new(input[0]).valid_velocity_combination_count
   end
 
   def initialize(input)
@@ -28,6 +29,12 @@ class Day17
     (minimum_x_velocity..).each do |x_velocity|
       successful_y_velocities = successful_y_velocities_for_x_velocity(x_velocity)
       return MathUtils::Numbers.triangle_number(successful_y_velocities.max) if successful_y_velocities.any?
+    end
+  end
+
+  def valid_velocity_combination_count
+    (minimum_x_velocity..@x_target.end).sum do |x_velocity|
+      successful_y_velocities_for_x_velocity(x_velocity).length
     end
   end
 

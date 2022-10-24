@@ -10,4 +10,10 @@ RSpec.describe Day17 do
 
     it { is_expected.to eq 45 }
   end
+
+  describe "#valid_velocity_combination_count" do
+    subject { day17.valid_velocity_combination_count }
+
+    it { is_expected.to eq 112 }
+  end
 end
