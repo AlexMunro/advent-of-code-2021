@@ -11,5 +11,5 @@ gem "rbtree"
 gem "rspec"
 gem "rubocop"
 gem "rubocop-rspec"
-gem "solargraph"
+gem "ruby-lsp"
 
